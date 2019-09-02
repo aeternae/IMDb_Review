@@ -23,7 +23,7 @@
 4	 9495_8	         1	  Superbly trashy and wondrously unpretentious 8...
 ```
 * 文本数据预处理<br>
-之后，利用beautifulsoap，re，stopwords去掉电影评论文本中的html标记，非字母字符以及停用词，使文本变成我们需要的无不相关字符的且仅有主干词汇的文本，便于之后的特征抽取。
+利用beautifulsoap，re，stopwords去掉电影评论文本中的html标记，非字母字符以及停用词，使文本变成我们需要的无不相关字符的且仅有主干词汇的文本，便于之后的特征抽取。
 ```
 def review_to_text(review, remove_stopwords):
     #去掉html标记
@@ -39,4 +39,11 @@ def review_to_text(review, remove_stopwords):
     return words
 ```
 
-### 文本特征抽取
+### 3.文本特征抽取
+* TF-IDF词频矩阵<br>
+词频(Term Frequency，TF)指某一个给定的词语在该文件中出现的次数。这个数字通常会被归一化(一般是词频除以文章总次数)，以防止它偏向长的文件。
+                                        
+    TF = 在某一类中词条出现的次数/该类中所有的词条数目
+逆向文件频率(Inverse Document Frequency，IDF)：主要思想是如果包含词条t的文档越少，IDF越大，则说明词条具有很好的类别区分能力。
+    
+    IDF = log⁡(语料库中的文档总数/包含该词条的文档数+1)	  
