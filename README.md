@@ -48,14 +48,13 @@ def review_to_text(review, remove_stopwords):
     3)每一个文本都可以在很长的词表上统计出一个很多列的特征向量。
     4)如果每个文本都出现的词汇，一般被标记为停用词不计入特征向量。
 
-* Countvectorizer
+* Countvectorizer<br>
 Countvectorizer旨在通过计数来将一个文档转换为向量，只考虑词汇在文本中出现的频率。
 
 * TF-IDF词频矩阵<br>
 词频(Term Frequency，TF)指某一个给定的词语在该文件中出现的次数。这个数字通常会被归一化(一般是词频除以文章总次数)，以防止它偏向长的文件。<
                                         
-    TF = 在某一类中词条出现的次数/该类中所有的词条数目
-
+    TF = 在某一类中词条出现的次数/该类中所有的词条数目<br>
 逆向文件频率(Inverse Document Frequency，IDF)：主要思想是如果包含词条t的文档越少，IDF越大，则说明词条具有很好的类别区分能力。<br>
     
     IDF = log⁡(语料库中的文档总数/包含该词条的文档数+1)	  
